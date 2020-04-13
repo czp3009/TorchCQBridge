@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <ProjectGuid>{16626D2A-11C9-414A-8050-1F573E0ED787}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>TorchCQBridge</RootNamespace>
+        <AssemblyName>TorchCQBridge</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Xaml" />
+        <Reference Include="WindowsBase" />
+        <Reference Include="System.Windows.Presentation" />
+        <Reference Include="PresentationCore" />
+        <Reference Include="PresentationFramework" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="Sandbox.Common">
+            <HintPath>$(SolutionDir)\GameBinaries\Sandbox.Common.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Sandbox.Game">
+            <HintPath>$(SolutionDir)\GameBinaries\Sandbox.Game.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Sandbox.Graphics">
+            <HintPath>$(SolutionDir)\GameBinaries\Sandbox.Graphics.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="SpaceEngineers.Game">
+            <HintPath>$(SolutionDir)\GameBinaries\SpaceEngineers.Game.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="SpaceEngineers.ObjectBuilders">
+            <HintPath>$(SolutionDir)\GameBinaries\SpaceEngineers.ObjectBuilders.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="SpaceEngineers.ObjectBuilders.XmlSerializers">
+            <HintPath>$(SolutionDir)\GameBinaries\SpaceEngineers.ObjectBuilders.XmlSerializers.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Torch">
+            <HintPath>$(SolutionDir)\TorchBinaries\Torch.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Torch.API">
+            <HintPath>$(SolutionDir)\TorchBinaries\Torch.API.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Torch.Server">
+            <HintPath>$(SolutionDir)\TorchBinaries\Torch.Server.exe</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="HavokWrapper">
+            <HintPath>$(SolutionDir)\GameBinaries\HavokWrapper.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Audio">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Audio.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Dedicated">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Dedicated.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Game">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Game.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Game.XmlSerializers">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Game.XmlSerializers.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Input">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Input.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Library">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Library.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Math">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Math.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.NativeWrapper">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.NativeWrapper.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Render">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Render.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Render11">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Render11.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="VRage.Scripting">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Scripting.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="NLog">
+            <HintPath>$(SolutionDir)\GameBinaries\NLog.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>$(SolutionDir)\GameBinaries\Newtonsoft.Json.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Model\SendGroupMessage.cs" />
+        <Compile Include="TorchCQBridgeBot.cs" />
+        <Compile Include="TorchCQBridgeConfig.cs" />
+        <Compile Include="TorchCQBridgePlugin.cs" />
+        <Page Include="TorchCQBridgeControl.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </Page>
+        <Compile Include="TorchCQBridgeControl.xaml.cs">
+            <DependentUpon>TorchCQBridgeControl.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="manifest.xml" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+    <Target Name="Zip" BeforeTargets="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+        <MakeDir Directories="$(MSBuildProjectDirectory)\zip" />
+        <ZipDirectory SourceDirectory="$(OutputPath)" DestinationFile="$(MSBuildProjectDirectory)\zip\$(MSBuildProjectName).zip" Overwrite="true" />
+    </Target>
+</Project>

@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="TorchCQBridge.TorchCqBridgeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:torchCqBridge="clr-namespace:TorchCQBridge"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <torchCqBridge:TorchCqBridgeConfig />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" SharedSizeGroup="Labels"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" SharedSizeGroup="Buttons"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row ="0" Grid.Column="0" VerticalAlignment="Center" Text="Address(root path)" Margin="5"/>
+        <TextBox Grid.Row ="0" Grid.Column="1" Grid.ColumnSpan="2" Name="Address" Text="{Binding Address}" Margin="5"/>
+        
+        <TextBlock Grid.Row ="1" Grid.Column="0" VerticalAlignment="Center" Text="Access token(empty for not use)" Margin="5"/>
+        <TextBox Grid.Row ="1" Grid.Column="1" Grid.ColumnSpan="2" Name="AccessToken" Text="{Binding AccessToken}" Margin="5"/>
+        
+        <TextBlock Grid.Row ="2" Grid.Column="0" VerticalAlignment="Center" Text="QQ Group ID(must not be 0)" Margin="5"/>
+        <TextBox Grid.Row ="2" Grid.Column="1" Grid.ColumnSpan="2" Name="GroupId" Text="{Binding GroupId}" Margin="5"/>
+        
+        <TextBlock Grid.Row ="3" Grid.Column="0" VerticalAlignment="Center" Text="Remove CQCode" Margin="5"/>
+        <CheckBox Grid.Row ="3" Grid.Column="1" Grid.ColumnSpan="2" Name="RemoveCqCode" IsChecked="{Binding RemoveCqCode}" Margin="5"/>
+        
+        <TextBlock Grid.Row ="4" Grid.Column="0" VerticalAlignment="Center" Text="Ignore empty message" Margin="5"/>
+        <CheckBox Grid.Row ="4" Grid.Column="1" Grid.ColumnSpan="2" Name="IgnoreEmptyMessage" IsChecked="{Binding IgnoreEmptyMessage}" Margin="5"/>
+        
+        <TextBlock Grid.Row ="5" Grid.Column="0" VerticalAlignment="Center" Text="QQ chat author format(to game)" Margin="5"/>
+        <TextBox Grid.Row ="5" Grid.Column="1" Grid.ColumnSpan="2" Name="QqChatAuthorFormat" Text="{Binding QqChatAuthorFormat}" Margin="5"/>
+        
+        <TextBlock Grid.Row ="6" Grid.Column="0" VerticalAlignment="Center" Text="QQ chat message format(to game)" Margin="5"/>
+        <TextBox Grid.Row ="6" Grid.Column="1" Grid.ColumnSpan="2" Name="QqChatMessageFormat" Text="{Binding QqChatMessageFormat}" Margin="5"/>
+        
+        <TextBlock Grid.Row ="7" Grid.Column="0" VerticalAlignment="Center" Text="Game chat format(to QQ)" Margin="5"/>
+        <TextBox Grid.Row ="7" Grid.Column="1" Grid.ColumnSpan="2" Name="GameChatFormat" Text="{Binding GameChatFormat}" Margin="5"/>
+
+        <Button Grid.Row="8" Grid.Column="2" Content="Save Config" Click="SaveButton_OnClick" Margin="5"/>
+        <Button Grid.Row="9" Grid.Column="2" Content="Restart" Click="RestartButton_OnClick" Margin="5" IsEnabled="{Binding SessionLoaded}"/>
+    </Grid>
+</UserControl>
